@@ -5,6 +5,10 @@ main() {
 }
 
 class PerguntaApp extends StatelessWidget {
+  responder() {
+    print('Resposta respondida');
+  }
+
   @override
   Widget build(BuildContext context) {
     final perguntas = [
@@ -15,14 +19,20 @@ class PerguntaApp extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
-              title: Text('AppBar'),
+              title: const Text('AppBar'),
             ),
             body: Column(
               children: [
                 Text(perguntas[0]),
-                ElevatedButton(onPressed: null, child: Text('Click aqui')),
-                TextButton(onPressed: null, child: Text('TextButton')),
-                OutlinedButton(onPressed: null, child: Text('outlined Button'))
+                ElevatedButton(
+                    onPressed: () => responder(),
+                    child: const Text('Click aqui')),
+                TextButton(
+                    onPressed: () => responder(),
+                    child: const Text('TextButton')),
+                OutlinedButton(
+                    onPressed: () => responder(),
+                    child: const Text('outlined Button'))
               ],
             )));
   }
